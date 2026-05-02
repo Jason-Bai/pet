@@ -1,17 +1,33 @@
 # Panda Pet
 
-A tiny Codex-generated panda pet that anyone can clone and open locally.
+An open-source custom Codex pet: a tiny cute animated panda.
+
+![Panda pet contact sheet](preview/contact-sheet.png)
 
 ## Try It
 
 ```bash
 git clone https://github.com/Jason-Bai/pet.git
 cd pet
-open index.html
+mkdir -p ~/.codex/pets
+cp -R pets/panda ~/.codex/pets/
 ```
 
-Or open `index.html` in any browser.
+Then open Codex settings, go to Appearance > Pets, refresh the pet list if needed, and select `Panda`.
+
+If Codex is already running, use Force Reload Skills / reload Codex App if the pet does not appear immediately.
+
+## Files
+
+- `pets/panda/pet.json` - Codex pet manifest.
+- `pets/panda/spritesheet.webp` - 8x9 animated pet atlas.
+- `preview/contact-sheet.png` - generated QA contact sheet for quick review.
+- `preview/validation.json` - atlas validation output.
 
 ## Goal
 
-This repository keeps prompts, assets, prototypes, and implementation notes for a soft, playful panda companion experience.
+This repository packages a cute panda Codex pet so other people can clone it, install it locally, and use it as their Codex App companion.
+
+## Build Notes
+
+This pet was generated with OpenAI's `hatch-pet` Codex skill. The final package was validated as a Codex-compatible RGBA WebP spritesheet.
